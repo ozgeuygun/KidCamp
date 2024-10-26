@@ -1,0 +1,17 @@
+﻿@model EntityLayer.Concrete.Genre
+@{
+    ViewData["Title"] = "UpdateGenre";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+
+<form method="post">
+    @Html.HiddenFor(x=>x.GenreID)
+    <div class="form-group">
+        @Html.Label("Tür Adı")
+        <input type="text" asp-for="GenreName" class="form-control" />
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+</form>

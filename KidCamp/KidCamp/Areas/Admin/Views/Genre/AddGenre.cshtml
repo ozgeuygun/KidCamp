@@ -1,0 +1,17 @@
+﻿@model EntityLayer.Concrete.Genre
+@{
+    ViewData["Title"] = "AddGenre";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<form method="post">
+
+    <div class="form-group">
+        @Html.Label("Tür Adı")
+        <input type="text" asp-for="GenreName" class="form-control" />
+        <span asp-validation-for="GenreName" class="text-danger"></span>
+    </div>
+    <button class="btn btn-success">Ekle</button>
+</form>

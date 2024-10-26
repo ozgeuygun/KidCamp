@@ -1,0 +1,63 @@
+﻿@using EntityLayer.Concrete
+@model List<EventDetail>
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="mb-3">Popüler Aktiviteler</h1>
+            <p>Katılımcılarımızın en çok tercih ettiği etkinlikler burada! Herkes için eğlenceli ve öğretici deneyimler sunuyoruz.</p>
+        </div>
+
+        <div class="row g-4">
+           @foreach (var item in Model)
+					{
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+				<div class="classes-item">
+					
+                    <div class="bg-light rounded-circle w-75 mx-auto p-3">
+                        <img class="img-fluid rounded-circle" src="@item.EventImage" alt="">
+                    </div>
+
+                    <div class="bg-light rounded p-4 pt-5 mt-n5">
+                        
+                        <a class="d-block text-center h3 mt-3 mb-4" href="">@item.EventName</a>
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div class="d-flex align-items-center">
+                                
+                                <div class="ms-3">
+                                    <h6 class="text-primary mb-1">Etkinlik türü: @item.EventType</h6>
+                                    <small>Yer: @item.Location</small>
+                                </div>
+                            </div>
+                                <span class="bg-primary text-white rounded-pill py-2 px-3" href="">@item.Price ₺</span>
+                        </div>
+                        <div class="row g-1">
+                            <div class="col-4">
+                                <div class="border-top border-3 border-primary pt-2">
+                                    <h6 class="text-primary mb-1">Yaş grubu:</h6>
+                                    <small>@item.MinAge - @item.MaxAge</small>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="border-top border-3 border-success pt-2">
+                                    <h6 class="text-success mb-1">Başlangıç:</h6>
+                                    <small>@item.StartDate</small>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="border-top border-3 border-warning pt-2">
+                                    <h6 class="text-warning mb-1">Kontenjan:</h6>
+                                    <small>@item.Capacity</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                  </div>
+                  
+            </div>
+      }
+       </div>
+            
+    </div>
+</div>

@@ -1,0 +1,66 @@
+﻿@model EntityLayer.Concrete.Reservation
+@{
+    ViewData["Title"] = "MakeReservation";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+
+
+<div class="container mt-5">
+    <form method="post" id="reservationForm" class="bg-white rounded p-4 shadow">
+        <h2 class="text-dark font-weight-bold text-center mb-4">Rezervasyonu Tamamla</h2>
+        <div class="form-group">
+            @Html.Label("Etkinlik")
+            @Html.DropDownListFor(x => x.EventDetailID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+            <span asp-validation-for="EventDetailID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            @Html.Label("Kişi Sayısı")
+            <input type="number" asp-for="Participant" class="form-control" />
+            <span asp-validation-for="Participant" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            @Html.Label("Tarih")
+            <input type="date" asp-for="ApplicationDate" class="form-control" />
+            <span asp-validation-for="ApplicationDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            @Html.Label("Notunuz")
+            <input type="text" asp-for="Description" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-success" id="btn1">Gönder</button>
+    </form>
+</div>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        
+        var warningMessage = '@Html.Raw(TempData["Warning"] ?? "")';
+        if (warningMessage) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Uyarı',
+                text: warningMessage,
+                confirmButtonText: 'Tamam'
+            });
+        }
+
+        $('#btn1').click(function () {
+          
+            $('#reservationForm').submit();
+        });
+    });
+</script>
+
+

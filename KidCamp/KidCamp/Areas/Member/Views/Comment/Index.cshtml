@@ -1,0 +1,62 @@
+﻿@model EntityLayer.Concrete.Testimonial
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</head>
+
+
+<form method="post">
+    <div class="form-group">
+        @Html.Label("Etkinlik")
+        @Html.DropDownListFor(x=>x.EventDetailID, (List<SelectListItem>)ViewBag.v,new{@class="form-control"})
+        <span asp-validation-for="EventDetailID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        @Html.Label("Adınız")
+        <input type="text" asp-for="ClientName" class="form-control" />
+        <span asp-validation-for="ClientName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        @Html.Label("Yorumunuz")
+        <input type="text" asp-for="Comment" class="form-control" />
+        <span asp-validation-for="Comment" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        @Html.Label("Veli/Çocuk")
+        <input type="text" asp-for="ClientDetail" class="form-control" />
+        <span asp-validation-for="ClientDetail" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        @Html.Label("TestimonialImage")
+        <input type="text" asp-for="TestimonialImage" class="form-control" value="/images/user.png" />
+    </div>
+    <button class="btn btn-outline-success" id="btn1">Gönder</button>
+</form>
+<script>
+    $(document).ready(function () {
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <text>
+                toastr.success('@TempData["SuccessMessage"]', 'Başarılı');
+        </text>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <text>
+                toastr.error('@TempData["ErrorMessage"]', 'Hata');
+        </text>
+    }
+        });
+</script>

@@ -1,0 +1,68 @@
+﻿@model EntityLayer.Concrete.EventDetail
+@{
+    ViewData["Title"] = "UpdateEvent";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<form method="post">
+    @Html.HiddenFor(x=>x.EventDetailID)
+    <div class="form-group">
+        @Html.Label("Aktivite Türü")
+        <input type="text" asp-for="EventType" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Aktivite Adı")
+        <input type="text" asp-for="EventName" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Lokasyon")
+        <input type="text" asp-for="Location" class="form-control" />
+    </div>
+   
+    <div class="form-group">
+        @Html.Label("Başlangıç tarihi")
+        <input type="text" asp-for="StartDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Bitiş tarihi")
+        <input type="text" asp-for="EndDate" class="form-control" />
+    </div>
+ 
+    <div class="form-group">
+        @Html.Label("Fiyat")
+        <input type="text" asp-for="Price" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Resim")
+        <input type="text" asp-for="EventImage" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Notunuz")
+        <input type="text" asp-for="Description" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Kapasite")
+        <input type="number" asp-for="Capacity" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Ebeveynli/Ebeveynsiz")
+        <input type="text" asp-for="Participation" class="form-control" />
+    </div>
+ 
+    <div class="form-group">
+        @Html.Label("Minimum Yaş")
+        <input type="number" asp-for="MinAge" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Maksimum Yaş")
+        <input type="number" asp-for="MaxAge" class="form-control" />
+    </div>
+ 
+
+   
+   
+    <button class="btn btn-warning">Güncelle</button>
+</form>
+

@@ -1,0 +1,31 @@
+﻿@using EntityLayer.Concrete
+@model List<Reservation>
+@{
+    ViewData["Title"] = "Event";
+    Layout = "~/Views/Shared/InstructorLayout.cshtml";
+}
+
+
+
+<table class="table table-bordered">
+    <tr>
+       
+        <th>Etkinlik Adı</th>
+        <th>Etkinlik Tarihi</th>
+        <th>Katılımcı Listesini Gör</th>
+        <th>Katılımcı Listesini İndir</th>
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            <td>@item.EventDetail?.EventName</td> 
+           <td>@item.EventDetail.StartDate-@item.EventDetail.EndDate</td>
+            <td><a href="/Instructor/InstructorEvent/Details/@item.EventDetailID" class="btn btn-warning">Katılımcı listesini gör</a></td>
+			<td><a href="/Instructor/InstructorEvent/ExcelReport/@item.EventDetailID" class="btn btn-danger">İndir</a></td>
+			
+          
+        </tr>
+    }
+</table>

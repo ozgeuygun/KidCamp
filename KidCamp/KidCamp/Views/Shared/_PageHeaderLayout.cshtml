@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Html.PartialAsync("~/Views/LayoutPartial/_HeaderPartial.cshtml")
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+       
+        <!-- Spinner End -->
+        @await Html.PartialAsync("~/Views/LayoutPartial/_NavbarPartial.cshtml")
+        @RenderBody()
+        <!-- Footer Start -->
+        @await Html.PartialAsync("~/Views/LayoutPartial/_FooterPartial.cshtml")
+        <!-- Footer End -->
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    @await Html.PartialAsync("~/Views/LayoutPartial/_ScriptsPartial.cshtml")
+    <!-- Template Javascript -->
+   
+</body>
+
+</html>

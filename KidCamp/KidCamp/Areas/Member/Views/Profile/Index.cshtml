@@ -1,0 +1,31 @@
+﻿@model KidCamp.Areas.Member.Models.MemberEditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<br />
+
+@await Component.InvokeAsync("_MemberStatistics")
+<br />
+<form method="post" action="Index">
+    @Html.Label("Adınız")
+    <input type="text" asp-for="name" class="form-control" />
+    <br />
+    @Html.Label("Soyadınız")
+    <input type="text" asp-for="surname" class="form-control" />
+    <br />
+    @Html.Label("Mailiniz")
+    <input type="text" asp-for="mail" class="form-control" disabled />
+    <br />
+    @Html.Label("Şifreniz")
+    <input type="text" asp-for="password" class="form-control" />
+    <br />
+    @Html.Label("Şifre Tekrar")
+    <input type="text" asp-for="confirmpassword" class="form-control" />
+    <br />
+    @Html.Label("Çocuğunuzun Yaşı")
+    <input type="number" asp-for="childage" class="form-control" />
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>

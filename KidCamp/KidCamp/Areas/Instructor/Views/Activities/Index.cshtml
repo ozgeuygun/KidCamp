@@ -1,0 +1,30 @@
+﻿@using EntityLayer.Concrete
+@model List<EventDetail>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/InstructorLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Aktivite Adı</th>
+        <th>Detaylar</th>
+       
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EventDetailID</td>
+            <td>@item.EventName</td>
+            <td><a href="/Instructor/Activities/ActivityDetails/@item.EventDetailID" class="btn btn-info"> Detaylar</a></td>
+            
+
+        </tr>
+    }
+</table>
+
+
+
+

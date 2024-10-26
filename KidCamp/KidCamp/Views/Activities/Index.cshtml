@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_PageHeaderLayout.cshtml";
+}
+
+
+<div class="container-xxl py-5 page-header position-relative mb-5">
+    <div class="container py-5">
+        <h1 class="display-2 text-white animated slideInDown mb-4">Etkinlikler</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Default/Index">Ana Sayfa</a></li>
+                <li class="breadcrumb-item"><a href="#">Sayfalar</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Etkinlikler</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+@await Component.InvokeAsync("_PopularEvents")
+
+@await Component.InvokeAsync("_ActivityInformation")
+
+@await Component.InvokeAsync("_Testimonial")
+
+
+
+     

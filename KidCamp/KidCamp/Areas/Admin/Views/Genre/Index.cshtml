@@ -1,0 +1,29 @@
+﻿@using EntityLayer.Concrete
+@model List<Genre>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Tür Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.GenreID</td>
+            <td>@item.GenreName</td>         
+            <td><a href="/Admin/Genre/DeleteGenre/@item.GenreID" class="btn btn-danger"> Sil</a></td>
+            <td><a href="/Admin/Genre/UpdateGenre/@item.GenreID" class="btn btn-warning"> Güncelle </a></td>
+
+        </tr>
+    }
+</table>
+
+<a href="/Admin/Genre/AddGenre" class="btn btn-primary">yeni tür ekle </a>

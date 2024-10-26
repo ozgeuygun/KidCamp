@@ -1,0 +1,29 @@
+﻿@using EntityLayer.Concrete
+@model List<Facility>
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="mb-3">İmkanlarımız</h1>
+            <p>Kamp süresince sunduğumuz çeşitli olanaklar, katılımcıların hem güvenli hem de keyifli bir deneyim yaşamasını sağlar.</p>
+        </div>
+        <div class="row g-4">
+            @foreach(var item in Model){
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="facility-item">
+                    <div class="@item.FacilityImage">
+                            <span class="@item.FacilityImage2"></span>
+                            <i class="@item.FacilityImage3"></i>
+                            <span class="@item.FacilityImage4"></span>
+                    </div>
+                        <div class="@item.FacilityImage5">
+                            <h3 class="@item.FacilityImage6">@item.FacilityTitle</h3>
+                        <p class="mb-0">@item.FacilityDescription</p>
+                    </div>
+                </div>
+            </div>
+            }
+         
+        </div>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+﻿@model KidCamp.Models.InstructorRegisterViewModel
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Eğitmen Kayıt</title>
+	<link href="~/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+		  rel="stylesheet">
+	<link href="~/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-primary">
+
+	<div class="container">
+
+		<div class="card o-hidden border-0 shadow-lg my-5">
+			<div class="card-body p-0">
+				
+				<div class="row">
+					<div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+					<div class="col-lg-7">
+						<div class="p-5">
+							<div class="text-center">
+								<h1 class="h4 text-gray-900 mb-4">Bir Hesap Oluştur !</h1>
+							</div>
+							<form class="user" method="post">
+								<div class="form-group row">
+									<div class="col-sm-6 mb-3 mb-sm-0">
+										<input type="text" class="form-control form-control-user" asp-for="RegisterName" id="exampleFirstName"
+			  placeholder="Adınız">
+										<span asp-validation-for="RegisterName" class="text-danger"></span>
+
+									</div>
+									<div class="col-sm-6">
+										<input type="text" class="form-control form-control-user" asp-for="RegisterSurname" id="exampleLastName"
+			  placeholder="Soyadınız">
+										<span asp-validation-for="RegisterSurname" class="text-danger"></span>
+									</div>
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control form-control-user" asp-for="Username" id="exampleInputEmail"
+			 placeholder="Kullanıcı Adınız">
+									<span asp-validation-for="Username" class="text-danger"></span>
+								</div>																						
+								<div class="form-group">
+									<input type="email" class="form-control form-control-user" asp-for="RegisterMail" id="exampleInputEmail"
+			 placeholder="Email">
+									<span asp-validation-for="RegisterMail" class="text-danger"></span>
+								</div>
+								<div class="form-group row">
+									<div class="col-sm-6 mb-3 mb-sm-0">
+										<input type="password" class="form-control form-control-user"
+			  id="exampleInputPassword" asp-for="Password" placeholder="Şifre">
+										<span asp-validation-for="Password" class="text-danger"></span>
+									</div>
+									<div class="col-sm-6">
+										<input type="password" class="form-control form-control-user"
+			  id="exampleRepeatPassword" asp-for="ConfirmPassword" placeholder="Şifre Tekrar">
+										<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+									</div>
+								</div>
+								<button class="btn btn-primary btn-user btn-block">Hesap Oluştur</button>								
+								<hr>
+								<a href="#" class="btn btn-google btn-user btn-block">
+								<i class="fab fa-google fa-fw"></i> Google ile giriş
+								</a>
+								<a href="#" class="btn btn-facebook btn-user btn-block">
+								<i class="fab fa-facebook-f fa-fw"></i> Facebook ile giriş
+								</a>
+							</form>
+							<hr>
+							<div class="text-center">
+								<a class="small" href="#">Şifremi Unuttum ?</a>
+							</div>
+							<div class="text-center">
+								<a class="small" href="/Login/LoginInstructor">Zaten bir hesabın mı var? Giriş Yap !</a>
+							</div>
+							<div class="text-danger" asp-validation-summary="ModelOnly">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
+		<script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+		<script src="~/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

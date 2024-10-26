@@ -1,0 +1,29 @@
+﻿@model List<Reservation>
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/InstructorLayout.cshtml";
+}
+
+
+<h4>Katılımcı Listesi</h4>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Veli Adı Soyadı</th>
+        <th>Çocuğun Adı</th>
+        <th>Veli irtibat</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.AppUser.Name  @item.AppUser.Surname</td>
+            <td> @item.AppUser.ChildName</td>                      
+            <td> @item.AppUser.Email</td>                    
+        </tr>
+        
+    }
+    
+</table>
+
+

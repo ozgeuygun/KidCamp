@@ -1,0 +1,20 @@
+﻿@model string
+<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    
+        @if (!string.IsNullOrEmpty(Model))
+        {
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+            Hoş geldiniz, @Model!
+        </span>
+        }
+        else
+    {
+           <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+           Hoş geldiniz, misafir!
+        </span>
+        }
+    
+    <img class="img-profile rounded-circle"
+         src="~/startbootstrap-sb-admin-2-gh-pages/img/undraw_profile.svg">
+</a>

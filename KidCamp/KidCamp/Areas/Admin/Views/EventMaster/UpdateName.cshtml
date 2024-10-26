@@ -1,0 +1,18 @@
+﻿@model EntityLayer.Concrete.EventMaster
+@{
+    ViewData["Title"] = "UpdateName";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+
+<form method="post">
+    @Html.HiddenFor(x=>x.EventMasterID)
+    <div class="form-group">
+        @Html.Label("Aktivite Adı")
+        <input type="text" asp-for="EventName" class="form-control" />
+        <span asp-validation-for="EventName" class="text-danger"></span>
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+</form>

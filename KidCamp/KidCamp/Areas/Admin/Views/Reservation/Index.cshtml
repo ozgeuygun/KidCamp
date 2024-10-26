@@ -1,0 +1,32 @@
+﻿@using EntityLayer.Concrete
+@model List<Reservation>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Rezervasyon ID</th>
+        <th>Kullanıcı</th>
+        <th>Başvuru tarihi</th>
+        <th>Durum</th>
+        <th>Katıldığı Aktivite</th>
+        <th>Rezervasyonu İncele</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ReservationID</td>
+            <td>@item.AppUser.Name @item.AppUser.Surname</td>
+            <td>@item.ApplicationDate/td>
+            <td>@item.Status</td>
+            <td>@item.EventDetail.EventName</td>       
+            <td><a href="/Admin/Reservation/UpdateReservation/@item.ReservationID" class="btn btn-outline-info"> İncele</a></td>
+
+        </tr>
+    }
+</table>
+
+

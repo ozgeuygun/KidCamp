@@ -1,0 +1,31 @@
+﻿@using EntityLayer.Concrete
+@model List<EventDetail>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Lokasyon</th>
+        <th>Fiyat</th>
+        <th>Kapasite</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.EventDetailID</td>
+            <td>@item.Location</td>
+            <td>@item.Price</td>
+            <td>@item.Capacity</td>
+            <td><a href="/Admin/Activities/DeleteEvent/@item.EventDetailID" class="btn btn-danger"> Sil</a></td>
+            <td><a href="/Admin/Activities/UpdateEvent/@item.EventDetailID" class="btn btn-warning"> Güncelle </a></td>
+
+        </tr>
+    }
+</table>
+
+<a href="/Admin/Activities/AddEvent" class="btn btn-info">yeni aktivite ekle </a>

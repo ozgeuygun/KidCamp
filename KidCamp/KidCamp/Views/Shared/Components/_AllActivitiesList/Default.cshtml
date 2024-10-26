@@ -1,0 +1,118 @@
+﻿@using EntityLayer.Concrete
+@model List<EventDetail>
+@{
+    Layout = null;
+}
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<h1>Etkinlikler</h1>
+
+@*KAMP BAŞVURULARINDA DETAYLAR KISMINDA POP ŞEKLİNDE PROGRAM ŞEMASI ÇIKACAK*@
+
+@*FİYATLARIN ARTAN VEYA AZALAN ŞEKLİNDE FİLTRELENİP-LİSTELENMESİ*@
+@*<div class="list-group">
+    @foreach(var item2 in Model){
+        <a href="Member/Activities/Index/@item2.Genre.GenreName  class="list-group-item list-group-item-action" >@item2.Genre.GenreName</a>
+    }
+</div>*@
+
+
+<style>
+    .card {
+        max-height: 400px; /* Kartın maksimum yüksekliğini ayarlayın */
+        overflow: hidden; /* İçeriğin taşmasını engellemek için */
+    }
+
+    .card-img-top {
+        object-fit: cover; /* Resmi kapsayıcıya uygun şekilde keser */
+        height: 150px; /* Resmin yüksekliğini ayarlayın */
+        width: 100%; /* Resmin genişliği kartın genişliğine uyar */
+    }
+</style>
+
+<div class="container">
+    @* ortaya alma*@
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 15rem;">
+                    <img src="@item.EventImage" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.EventName</h5>
+                        <p class="card-text">@item.EventType</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modal-@item.EventDetailID">Detay</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal-@item.EventDetailID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Detay</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Modal içeriği burada olacak -->
+                                        <p>
+                                            @item.EventName
+                                            <br>
+                                            Yer: @item.Location
+                                            <br>
+                                            Tarih: @item.StartDate -@item.EndDate
+                                            <br>
+                                            Fiyat:  @item.Price
+                                            <br>
+                                            @item.Description
+                                            <br>
+                                            @item.Capacity
+                                            <br>
+                                            Katılım Türü:  @item.Participation
+
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+@*<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>AD</th>
+        <th>TÜR</th>
+        <th>YAŞ ARALIĞI</th>
+        <th>FİYAT</th>
+        <th>KAPASİTE</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.EventID</td>
+            <td>@item.EventName</td>
+            <td>@item.EventType</td>
+            <td>@item.MinAge - @item.MaxAge</td>
+            <td>@item.Price</td>
+            <td>@item.Capacity</td>
+            <td><a href="#" class="btn btn-outline-info">Detaylar</a></td>
+        </tr>
+    }
+</table>*@
+
+@*YAŞ ORANLARI UYMUYORSA VELİNİN ÇOCUĞUNU O KAMPA/AQTÖLYEYE KAYIT EDEMEMESİ--->REZERVASYON KAYIT SAYFASINDA*@
+

@@ -1,0 +1,59 @@
+﻿@using EntityLayer.Concrete
+@model List<ActivityInformation>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+
+@foreach (var item2 in Model)
+{
+    <div class="card mb-3 border-light">
+        <div class="card-header bg-light d-flex justify-content-between align-items-center">
+            <span>ID: @item2.InformationID</span>
+            <span class="text-end">Ad Soyad :@item2.InformationName</span>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Mail: @item2.InformationMail</h5>
+            <p class="card-text">
+                @item2.InformationMessage <br />
+                Çocuk Ad:@item2.InformationDetail<br/>
+                Çocuk Yaş:@item2.InformationDetail2
+            </p>
+
+            <a href="/Admin/Information/DeleteInfo/@item2.InformationID" class="btn btn-outline-danger"> Sil</a>
+
+        </div>
+    </div>
+
+}@if (TempData["SuccessMessage"] != null)
+{
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Başarılı',
+            text: '@TempData["SuccessMessage"]',
+             showConfirmButton: true // Onay butonunu göster
+        });
+    </script>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Hata',
+            text: '@TempData["ErrorMessage"]',         
+           showConfirmButton: true // Onay butonunu göster
+        });
+    </script>
+}

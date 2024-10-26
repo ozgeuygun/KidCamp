@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<div class="container-xxl bg-white p-0">
+    @await Component.InvokeAsync("_SliderPartial")
+
+    @await Component.InvokeAsync("_Facilities")
+
+    @await Component.InvokeAsync("_About")
+
+    @await Component.InvokeAsync("_Collaborate")
+   
+    @await Component.InvokeAsync("_PopularEvents")
+
+    @await Component.InvokeAsync("_ActivityInformation")
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="mb-3">Popüler Eğitmenler</h1>
+                <p>
+                    Alanında uzman, ilham verici bir yolculuk için buradalar!
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative">
+                        <img class="img-fluid rounded-circle w-75" src="~/preschool-website-template/img/team-1.jpg" alt="">
+                        <div class="team-text">
+                            <h3>Şeyda Temiz</h3>
+                            <p>Eğitimci </p>
+                            <div class="d-flex align-items-center">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item position-relative">
+                        <img class="img-fluid rounded-circle w-75" src="~/preschool-website-template/img/team-2.jpg" alt="">
+                        <div class="team-text">
+                            <h3>Ahmet Köse</h3>
+                            <p>Eğitimci </p>
+                            <div class="d-flex align-items-center">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item position-relative">
+                        <img class="img-fluid rounded-circle w-75" src="~/preschool-website-template/img/team-3.jpg" alt="">
+                        <div class="team-text">
+                            <h3>Ayşe Pala</h3>
+                            <p>Eğitimci</p>
+                            <div class="d-flex align-items-center">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @await Component.InvokeAsync("_Testimonial")
+
+  

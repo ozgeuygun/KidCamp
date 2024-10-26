@@ -1,0 +1,27 @@
+﻿@using EntityLayer.Concrete
+@model List<Testimonial>
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="mb-3">Müşteri Yorumları!</h1>
+            <p>Katılımcılarımızın deneyimlerini dinleyin; onların memnuniyeti bizim en büyük ödülümüz!</p>
+        </div>
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+            @foreach(var item in Model){ 
+            <div class="testimonial-item bg-light rounded p-5">
+                <p class="fs-5">@item.Comment</p>
+                <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="@item.TestimonialImage" style="width: 90px; height: 90px;">
+                    <div class="ps-3">
+                        <h3 class="mb-1">@item.AppUser.Name</h3>
+                        <span>Katılınan Etkinlik:@item.EventDetail.EventName</span>
+                    </div>
+                    <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
+                </div>
+                </div>
+            }
+           
+        </div>
+    </div>
+</div>

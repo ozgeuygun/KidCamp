@@ -1,0 +1,91 @@
+﻿@using EntityLayer.Concrete
+@model List<FavoriteActivity>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+
+
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-12 mb-4">
+                <div class="card mb-3 border-light d-flex flex-row" style="border-radius: 10px;">
+                    <img src="@item.EventDetail.EventImage" class="card-img-left" alt="..." style="width: 200px; height: auto; margin-right: 15px; border-radius: 10px;" />
+                    <div class="card-body">
+                        <div class="card-header bg-white d-flex justify-content-between align-items-start border-0" style="padding: 10px;">
+                            <div>
+                                <span style="font-weight: bold;">@item.EventDetail.EventName</span>
+                                <br />
+                                <span style="font-size: 0.9rem; color: gray;">Kontenjan: @item.EventDetail.Capacity</span>
+                                <br />
+                                <span style="font-size: 0.75rem; color: gray;">Aktivite Türü: @item.EventDetail.EventType</span>
+                            </div>
+                            <span class="text-end">@item.EventDetail.StartDate - @item.EventDetail.EndDate</span>
+                        </div>
+                        <button class="btn btn-primary float-end" data-toggle="modal" data-target="#modal-@item.EventDetailID">Detay</button>
+                        <a href="/Member/Favorite/RemoveFavorities/@item.FavoriteActivityID" class="btn btn-outline-danger"> Sil</a>
+                       
+                        <div class="modal fade" id="modal-@item.EventDetailID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Detay</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            @item.EventDetail.EventName
+                                            <br>
+                                            Yer: @item.EventDetail.Location
+                                            <br>
+                                            Tarih: @item.EventDetail.StartDate - @item.EventDetail.EndDate
+                                            <br>
+                                            Fiyat: @item.EventDetail.Price
+                                            <br>
+                                            @item.EventDetail.Description
+                                            <br>
+                                            Kapasite: @item.EventDetail.Capacity
+                                            <br>
+                                            Katılım Türü: @item.EventDetail.Participation
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@if (TempData["SuccessMessage"] != null)
+{
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Başarılı',
+            text: '@TempData["SuccessMessage"]',
+            showConfirmButton: true // Onay butonunu göster
+        });
+    </script>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Hata',
+            text: '@TempData["ErrorMessage"]',
+            showConfirmButton: true // Onay butonunu göster
+        });
+    </script>
+}

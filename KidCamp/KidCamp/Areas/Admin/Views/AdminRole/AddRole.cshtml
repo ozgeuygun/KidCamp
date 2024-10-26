@@ -1,0 +1,16 @@
+﻿@using KidCamp.Areas.Admin.Models;
+@model AddRoleViewModel
+
+@{
+    ViewData["Title"] = "AddRole";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<form method="post">
+    <label>rol adını giriniz</label>
+    <input type="text" class="form-control" asp-for="RoleName" />
+    <br />
+    <button class="btn btn-success">Rolü ekle</button>
+</form>
