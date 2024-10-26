@@ -38,29 +38,34 @@ The capacity is automatically updated with each new reservation. When users ente
 - https://www.youtube.com/watch?v=ZblVzj04LtM&list=PLKnjBHu2xXNMK5MBogdXmsXVi3K_eEZT5
   
 ### Home page
-![deneme](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/Ana%20Sayfa.png)
+![Home Page](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/Ana%20Sayfa.png)
 
 ### Information
-![deneme](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/bilgi-al.png)
+![Information](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/bilgi-al.png)
 
 ### Member - Activities
-![deneme](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/Aktiviteler.png)
+![activities](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/Aktiviteler.png)
 
 ### Member - Login
-![deneme](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/Giris.png)
-
-### Instructor - Participant
-![deneme](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/Katilimcilar.png)
-
-![deneme](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/katilimci-listesi.png)
+![login](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/Giris.png)
 
 ### Member - Reservation
-![deneme](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/Rezervasyon.png)
-
-### Admin - Roles
-![deneme](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/Rol.png)
+![reservation](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/Rezervasyon.png)
+![reservation](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/uye-bildirim.png)
 
 ### Member- Comment
-![deneme](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/Yorum.png)
+![comment](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/Yorum.png)
+
+### Instructor - Participant
+![participant](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/Katilimcilar.png)
+![participant list](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/katilimci-listesi.png)
+
+### Admin - Roles
+![roles](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/Rol.png)
+
+### Admin - Activities
+![admin](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/admin-aktivite.png)
+
+
 
 
