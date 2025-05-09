@@ -34,8 +34,6 @@ The capacity is automatically updated with each new reservation. When users ente
 - Fluent Validation
 - Trigger
   
-### References
-- https://www.youtube.com/watch?v=ZblVzj04LtM&list=PLKnjBHu2xXNMK5MBogdXmsXVi3K_eEZT5
   
 ### Home page
 ![Home Page](https://github.com/ozgeuygun/KidCamp/blob/main/KidCamp/KidCamp/wwwroot/Screenshot/Ana%20Sayfa.png)
