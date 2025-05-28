@@ -27,41 +27,28 @@ namespace KidCamp.Areas.Member.Controllers
         public IActionResult ListCamps()
         {
             var campList = _eventDetailService.GetCamp();
-           
-
             return View(campList);
         }
        
         public IActionResult ListEvents()
         {
-
-			var eventList = _eventDetailService.GetEvent();
-
+            var eventList = _eventDetailService.GetEvent();
             return View(eventList);
         }
     
         public IActionResult Index(string searchTerm,int page=1)
         {
             if (string.IsNullOrWhiteSpace(searchTerm))
-            {
-                
+            {   
                 var allEvents = _eventDetailService.TGetList().ToPagedList(page, 3);
                 return View(allEvents);
             }
             else
-            {
-            
+            {     
              var searchedEvents= _eventDetailService.SearchActivities(searchTerm);
-
                 var pagedValues = searchedEvents.ToPagedList(page, 3);
                 return View(pagedValues);
-            }
-
-    
-
-            
-        }
-       
-
+            }           
+        }       
     }
 }
