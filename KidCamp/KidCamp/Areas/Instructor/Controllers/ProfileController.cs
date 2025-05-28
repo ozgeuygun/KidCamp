@@ -18,29 +18,23 @@ namespace KidCamp.Areas.Instructor.Controllers
         public ProfileController(UserManager<AppUser> userManager)
         {
             _userManager = userManager;
-        }
-
-		
-		[HttpGet]
-		public async Task<IActionResult> Index()
-		{
-			var values = await _userManager.FindByNameAsync(User.Identity.Name);
-			InstructorEditViewModel instructorEditViewModel = new InstructorEditViewModel();
-			instructorEditViewModel.name = values.Name;
-			instructorEditViewModel.surname = values.Surname;
-			instructorEditViewModel.mail = values.Email;
-            return View(instructorEditViewModel);
-
-
-
-		}
+        }	
+	
+	[HttpGet]
+	public async Task<IActionResult> Index()
+	{
+	var values = await _userManager.FindByNameAsync(User.Identity.Name);
+	InstructorEditViewModel instructorEditViewModel = new InstructorEditViewModel();
+	instructorEditViewModel.name = values.Name;
+	instructorEditViewModel.surname = values.Surname;
+	instructorEditViewModel.mail = values.Email;
+         return View(instructorEditViewModel);
+	}
+ 
         [HttpPost]
         public async Task<IActionResult> Index(InstructorEditViewModel b)
         {
-
-            var instructor = await _userManager.FindByNameAsync(User.Identity.Name);
-            
-
+          var instructor = await _userManager.FindByNameAsync(User.Identity.Name);
             instructor.Name = b.name;
             instructor.Surname = b.surname;
             instructor.PasswordHash = _userManager.PasswordHasher.HashPassword(instructor, b.password);
@@ -51,6 +45,5 @@ namespace KidCamp.Areas.Instructor.Controllers
             }
             return View();
         }
-
     }
 }
