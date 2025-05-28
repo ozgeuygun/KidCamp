@@ -8,9 +8,9 @@ using System.Diagnostics.Metrics;
 
 namespace KidCamp.Areas.Instructor.Controllers
 { 
-        [Area("Instructor")]
-        [Route("Instructor/[controller]/[action]")]
-        [Authorize(Roles = "Admin,Instructor")]
+    [Area("Instructor")]
+    [Route("Instructor/[controller]/[action]")]
+    [Authorize(Roles = "Admin,Instructor")]
     public class ProfileController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
