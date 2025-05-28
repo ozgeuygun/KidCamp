@@ -10,7 +10,6 @@ namespace DataAccessLayer.Abstract
     public interface ITestimonialDal : IGenericDal<Testimonial>
     {
         List<Testimonial> GetUnapprovedEventTestimonials();
-
         List<Testimonial> GetPublishedUserEventTestimonials();
     }
 }
