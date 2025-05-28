@@ -53,17 +53,17 @@ namespace BusinessLayer.Concrete
             return _eventdetailDal.ListEventDetail();
         }
 
-		public List<EventDetail> GetCamp()
-		{
+	public List<EventDetail> GetCamp()
+	{
             return _eventdetailDal.GetCamp();
 
-		}
-		public List<EventDetail> GetEvent()
-		{
-			return _eventdetailDal.GetEvent();
+	}
+	public List<EventDetail> GetEvent()
+	{
+	    return _eventdetailDal.GetEvent();
 
-		}
-
+	}
+ 
         public List<EventDetail> SearchActivities(string searchTerm)
         {
             return _eventdetailDal.SearchActivities(searchTerm);
