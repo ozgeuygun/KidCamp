@@ -13,9 +13,7 @@ namespace KidCamp.Areas.Admin.Controllers
     [Area("Admin")]
     [AllowAnonymous]
     public class ActivitiesController : Controller
-    {
-
-     
+    {    
         private readonly IEventDetailService _eventDetailService;
         private readonly IGenreService _genreService;
         private readonly IEventMasterService _eventMasterService;
@@ -30,11 +28,11 @@ namespace KidCamp.Areas.Admin.Controllers
         public IActionResult Index()
         {
             var listDetail = _eventDetailService.TGetList();
-			return View(listDetail);
+	    return View(listDetail);
         }
       
 
-		[HttpGet]
+	[HttpGet]
         public IActionResult AddEvent()
         {
             List<SelectListItem> values = (from x in _genreService.TGetList()
@@ -58,23 +56,14 @@ namespace KidCamp.Areas.Admin.Controllers
         }
         [HttpPost]
         public IActionResult AddEvent(EventDetail eventDetail)
-        {
-
-           
-          
-        
-            
+        { 
             eventDetail.Status = true;
             _eventDetailService.TAdd(eventDetail);
-			return RedirectToAction("Index");
-            
-
-           
+	    return RedirectToAction("Index");     
         }
         
         public IActionResult DeleteEvent(int id)
-        {
-            
+        {          
             var deleteDetail = _eventDetailService.TGetByID(id);
 			if (deleteDetail != null)
 			{
@@ -86,7 +75,6 @@ namespace KidCamp.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult UpdateEvent(int id)
         {
-
             var updateDetail = _eventDetailService.TGetByID(id);
             return View(updateDetail);
         }
