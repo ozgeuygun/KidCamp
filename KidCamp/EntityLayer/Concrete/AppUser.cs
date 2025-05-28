@@ -15,9 +15,7 @@ namespace EntityLayer.Concrete
         public string? ChildName { get; set; }
         public int ChildAge { get; set; }
         public List<Reservation>  Reservations { get; set; }
-
         public List<FavoriteActivity> FavoriteActivities { get; set; }
-
         public List<Testimonial> Testimonials { get; set; }
     }
 }
