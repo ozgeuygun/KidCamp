@@ -15,36 +15,25 @@ namespace KidCamp.Areas.Admin.Controllers
         {
             _testimonialService = testimonialService;
         }
-    
-     
+      
         public IActionResult Index()
         {
             var listComment = _testimonialService.GetUnapprovedEventTestimonials();
             ViewBag.SuccessMessage = TempData["SuccessMessage"]; 
             return View(listComment);
         }
-        
-      
+           
         [HttpPost]
         public IActionResult Confirm(Testimonial testimonial)
-        {
-            
+        {        
             var existingTestimonial = _testimonialService.TGetByID(testimonial.TestimonialID);
 
             if (existingTestimonial != null)
-            {
-               
-                existingTestimonial.Status = true; 
-
-                
-                _testimonialService.TUpdate(existingTestimonial);
-            
-            }
-
-         
+            {      
+              existingTestimonial.Status = true;             
+             _testimonialService.TUpdate(existingTestimonial);     
+            }      
             return RedirectToAction("Index", "Activities", new { area = "Admin" });
-        }
-     
-
+        }     
     }
 }
