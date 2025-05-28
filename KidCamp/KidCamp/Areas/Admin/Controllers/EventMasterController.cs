@@ -44,15 +44,14 @@ namespace KidCamp.Areas.Admin.Controllers
       
         public IActionResult DeleteName(int id)
         {
-           
-            var deleteName = _eventMasterService.TGetByID(id);
-			if (deleteName != null)
-			{
-				deleteName.Status = false;
-				_eventMasterService.TUpdate(deleteName); 
-			}
-			return RedirectToAction("Index","Activities", new { area = "Admin" });
-		}
+             var deleteName = _eventMasterService.TGetByID(id);
+	     if (deleteName != null)
+	     {
+		deleteName.Status = false;
+		_eventMasterService.TUpdate(deleteName); 
+	     }
+	       return RedirectToAction("Index","Activities", new { area = "Admin" });
+	}
 
         [HttpGet]
         public IActionResult UpdateName(int id)
@@ -64,9 +63,9 @@ namespace KidCamp.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult UpdateName(EventMaster eventMaster)
         {
-			eventMaster.Status = true;
-			_eventMasterService.TUpdate(eventMaster);
-			return RedirectToAction("Index", "Activities", new { area = "Admin" });
-		}
+            eventMaster.Status = true;
+	   _eventMasterService.TUpdate(eventMaster);
+	return RedirectToAction("Index", "Activities", new { area = "Admin" });
+	}
     }
 }
