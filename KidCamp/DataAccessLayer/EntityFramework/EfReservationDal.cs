@@ -31,31 +31,21 @@ namespace DataAccessLayer.EntityFramework
             }
         }
 				
-
         public List<Reservation> GetReservationsByEventDetailIdAsync(int id)
         {
             using (var context = new Context())
             {
-
                 return context.Reservations.Include(x => x.AppUser).Where(x => x.EventDetailID == id).ToList();
-
-
-
             }
-		}
+        }
 
         public List<Reservation> GetUserReservationsByEvent()
         {
             using (var context = new Context())
             {
-
                 return context.Reservations.Include(x => x.EventDetail).Include(x=>x.AppUser).ToList();
 
-
-
             }
-        }
-
-      
+        }   
     }
 }
