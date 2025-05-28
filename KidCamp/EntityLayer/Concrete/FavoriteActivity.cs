@@ -14,8 +14,6 @@ namespace EntityLayer.Concrete
         public int FavoriteActivityID { get; set; }
         public int EventDetailID { get; set; }
         public EventDetail EventDetail { get; set; }
-
-
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
     }
