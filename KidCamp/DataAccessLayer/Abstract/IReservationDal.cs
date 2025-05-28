@@ -9,8 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface IReservationDal : IGenericDal<Reservation>
     {
-    
-       
         List<Reservation> GetAssignedEventNamesForInstructor(int id);
         List<Reservation> GetReservationsByEventDetailIdAsync(int id);
         List<Reservation> GetAllReservations(int id);
