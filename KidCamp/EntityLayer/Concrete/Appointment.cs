@@ -9,8 +9,7 @@ namespace EntityLayer.Concrete
 {
     public class ActivityInformation
 	{
-        [Key]
-        
+        [Key]    
         public int InformationID { get; set; }
         public string InformationName { get; set; }
         public string InformationMail { get; set; }
