@@ -25,31 +25,21 @@ namespace KidCamp.Areas.Admin.Controllers
             _userManager = userManager;
             _roleManager = roleManager;
         }
-
-
-
-       
+ 
         public IActionResult Index()
-        {
-           
-
-            var list = _reservationService.GetUserReservationsByEvent();
-         
+        {     
+            var list = _reservationService.GetUserReservationsByEvent();    
             return View(list);
 
         }
         [HttpGet]
-
         public IActionResult UpdateReservation(int id)
         {
-
             var values = _reservationService.TGetByID(id);
             values.AppUser = _userManager.FindByIdAsync(values.AppUserId.ToString()).Result;
             values.EventDetail = _eventDetailService.TGetByID(values.EventDetailID);
             return View(values);
-        }
-        
-      
+        }    
         [HttpPost]
         public IActionResult UpdateReservation(Reservation reservation)
         {
@@ -58,11 +48,7 @@ namespace KidCamp.Areas.Admin.Controllers
             existingReservation.Status = reservation.Status;         
             _reservationService.TUpdate(existingReservation);         
             ViewBag.SuccessMessage = "Başarıyla güncellendi.";
-            return View(existingReservation);
-          
-        }
-       
-
-
+            return View(existingReservation);       
+        }       
     }
 }
