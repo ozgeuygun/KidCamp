@@ -13,7 +13,7 @@ namespace DataAccessLayer.Abstract
 
         public List<EventDetail> ListEventDetail();     
         List<EventDetail> GetCamp();
-		List<EventDetail> GetEvent();     
+	List<EventDetail> GetEvent();     
         List<EventDetail> SearchActivities(string searchTerm);
         
     }
