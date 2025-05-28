@@ -8,9 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
-{
-    
-
+{    
     public class EfAboutDal:GenericRepository<About>,IAboutDal
     {
     }
