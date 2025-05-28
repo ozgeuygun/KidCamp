@@ -17,11 +17,7 @@ namespace DataAccessLayer.EntityFramework
         {
             using (var context = new Context())
             {
-
                 return context.Testimonials.Include(x => x.EventDetail).Include(x => x.AppUser).Where(x => x.Status == false).ToList();
-
-
-
             }
         }
 
@@ -29,11 +25,7 @@ namespace DataAccessLayer.EntityFramework
         {
             using (var context = new Context())
             {
-
                 return context.Testimonials.Include(x => x.EventDetail).Include(x => x.AppUser).Where(x => x.Status == true).ToList();
-
-
-
             }
         }
     }
