@@ -31,8 +31,8 @@ namespace BusinessLayer.Concrete
 
 		public ActivityInformation TGetByID(int id)
 		{
-            return _activityInformationDal.GetByID(id);
-        }
+                        return _activityInformationDal.GetByID(id);
+                }
 
 		public List<ActivityInformation> TGetList()
 		{
