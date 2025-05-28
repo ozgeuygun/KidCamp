@@ -18,7 +18,7 @@ namespace KidCamp.Controllers
     {
         private readonly IEventDetailService _eventDetailService;
         private readonly IReservationService _reservationService;		
-		private readonly UserManager<AppUser> _usermanager;
+	private readonly UserManager<AppUser> _usermanager;
 
         public ReservationController(IEventDetailService eventDetailService, IReservationService reservationService, UserManager<AppUser> usermanager)
         {
@@ -53,11 +53,9 @@ namespace KidCamp.Controllers
 
         [HttpPost]
         public async Task<IActionResult> MakeReservation(Reservation p)
-		{
-
+	{
             var userId = _usermanager.GetUserId(User);           
-            var appUser = await _usermanager.FindByIdAsync(userId);
-         
+            var appUser = await _usermanager.FindByIdAsync(userId);         
             var roles = await _usermanager.GetRolesAsync(appUser); 
             if (roles.Contains("Member")) 
             {
@@ -85,7 +83,6 @@ namespace KidCamp.Controllers
                     }
                 }
             }
-
 
             var user = await _usermanager.FindByNameAsync(User.Identity.Name);
             var userId2 = user.Id;
