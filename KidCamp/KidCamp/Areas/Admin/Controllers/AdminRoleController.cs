@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KidCamp.Areas.Admin.Controllers
 {
-	[Area("Admin")]
+    [Area("Admin")]
     [Route("Admin/AdminRole")]
     [AllowAnonymous]
     public class AdminRoleController : Controller
 	{
-		private readonly RoleManager<AppRole> _roleManager;
+	private readonly RoleManager<AppRole> _roleManager;
         private readonly UserManager<AppUser> _userManager;
         public AdminRoleController(RoleManager<AppRole> roleManager, UserManager<AppUser> userManager)
         {
@@ -19,12 +19,11 @@ namespace KidCamp.Areas.Admin.Controllers
             _userManager = userManager;
         }
 
-      
         [Route("Index")]
         public IActionResult Index()
 		{
-			var values = _roleManager.Roles.ToList();
-			return View(values);
+		 var values = _roleManager.Roles.ToList();
+		 return View(values);
 		}
 
         
@@ -41,33 +40,31 @@ namespace KidCamp.Areas.Admin.Controllers
         [Route("AddRole")]
         public async Task<IActionResult> AddRole(AddRoleViewModel addRoleViewModel)
         {
-			AppRole role = new AppRole()
-			{
-				Name = addRoleViewModel.RoleName
-			};
-			var result = await _roleManager.CreateAsync(role);
-			if (result.Succeeded)
-			{
-				return RedirectToAction("Index");
-			}
-			else
-			{
-				return View();
-			}
+	     AppRole role = new AppRole()
+	     {
+		Name = addRoleViewModel.RoleName
+	     };
+	    var result = await _roleManager.CreateAsync(role);
+	    if (result.Succeeded)
+	    {
+		return RedirectToAction("Index");
+	    }
+	    else
+	    {
+		return View();
+	    }
          
         }
-
-      
+    
         [Route("DeleteRole/{id}")]
         public async Task<IActionResult> DeleteRole(int id)
         {
-			var value = _roleManager.Roles.FirstOrDefault(x => x.Id == id);
-			await _roleManager.DeleteAsync(value);
+	    var value = _roleManager.Roles.FirstOrDefault(x => x.Id == id);
+	    await _roleManager.DeleteAsync(value);
             return RedirectToAction("Index");
 
         }
-
-      
+ 
         [HttpGet]
         [Route("UpdateRole/{id}")]
         public IActionResult UpdateRole(int id)
@@ -82,7 +79,6 @@ namespace KidCamp.Areas.Admin.Controllers
 
         }
 
-     
         [HttpPost]
         [Route("UpdateRole/{id}")]
         public async Task<IActionResult> UpdateRole(UpdateRoleViewModel updateRoleViewModel)
@@ -101,9 +97,9 @@ namespace KidCamp.Areas.Admin.Controllers
             return View(values);
         }
 	
-		[Route("AssignRole/{id}")]
-		[HttpGet]
-		public async Task<IActionResult> AssignRole(int id)
+	[Route("AssignRole/{id}")]
+	[HttpGet]
+	public async Task<IActionResult> AssignRole(int id)
         {
             var user = _userManager.Users.FirstOrDefault(x => x.Id == id);
             TempData["Userid"] = user.Id;
@@ -122,9 +118,9 @@ namespace KidCamp.Areas.Admin.Controllers
         }
 
         [HttpPost]
-		[Route("AssignRole/{id}")]
-		public async Task<IActionResult> AssignRole(List<RoleAssignViewModel> model)
-		{
+	[Route("AssignRole/{id}")]
+	public async Task<IActionResult> AssignRole(List<RoleAssignViewModel> model)
+	{
             var userid = (int)TempData["userid"];
             var user = _userManager.Users.FirstOrDefault(x => x.Id == userid);
             foreach(var item in model)
@@ -140,7 +136,7 @@ namespace KidCamp.Areas.Admin.Controllers
 
             }
             return RedirectToAction("UserList");
-		}
+	}
       
     }
 }
