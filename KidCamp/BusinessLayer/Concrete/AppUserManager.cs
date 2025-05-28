@@ -19,8 +19,6 @@ namespace BusinessLayer.Concrete
             _appUserDal = appUserDal;
         }
 
-      
-
         public void TAdd(AppUser t)
         {
             _appUserDal.Insert(t);
