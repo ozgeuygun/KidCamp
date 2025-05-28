@@ -19,8 +19,6 @@ namespace BusinessLayer.Concrete
             _appRoleDal = appRoleDal;
         }
 
-      
-
         public void TAdd(AppRole t)
         {
             _appRoleDal.Insert(t);
