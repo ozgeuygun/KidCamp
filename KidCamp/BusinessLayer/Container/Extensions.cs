@@ -49,8 +49,8 @@ namespace BusinessLayer.Container
             services.AddScoped<IEventMasterService, EventMasterManager>();
             services.AddScoped<IEventMasterDal, EfEventMasterDal>();
 
-			services.AddScoped<IActivityInformationService, ActivityInformationManager>();
-			services.AddScoped<IActivityInformationDal, EfActivityInformationDal>();
+	    services.AddScoped<IActivityInformationService, ActivityInformationManager>();
+	    services.AddScoped<IActivityInformationDal, EfActivityInformationDal>();
 
             services.AddScoped<IAppRoleService, AppRoleManager>();
             services.AddScoped<IAppRoleDal, EfAppRoleDal>();
